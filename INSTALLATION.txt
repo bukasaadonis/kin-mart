@@ -1,0 +1,156 @@
+KIN-MART — INSTALLATION LOCALE SOUS XAMPP
+==========================================
+
+PRÉREQUIS
+---------
+- Windows 10/11
+- XAMPP avec Apache, PHP 8.x et MySQL/MariaDB
+- Navigateur récent
+
+1. INSTALLER XAMPP
+------------------
+Installer XAMPP puis ouvrir le panneau de contrôle.
+Démarrer :
+- Apache
+- MySQL
+
+2. COPIER L’APPLICATION
+-----------------------
+Copier le dossier complet :
+
+KinMart
+
+vers :
+
+C:\xampp\htdocs\KinMart
+
+Ne pas copier uniquement le contenu : le dossier cible doit bien s’appeler KinMart.
+
+3. CRÉER / IMPORTER LA BASE
+----------------------------
+Ouvrir :
+http://localhost/phpmyadmin
+
+Option recommandée :
+- Onglet Importer
+- Choisir : C:\xampp\htdocs\KinMart\database\kinmart.sql
+- Exécuter
+
+Le fichier crée automatiquement la base `kinmart`, les tables, rôles, paramètres et comptes de base.
+
+Pour une démonstration riche, importer ensuite :
+C:\xampp\htdocs\KinMart\database\seed.sql
+
+Ce second fichier ajoute environ 50 produits, fournisseurs, promotions et données d’exemple.
+
+4. CONFIGURATION MYSQL
+----------------------
+Fichier :
+app\config\config.php
+
+Valeurs XAMPP standard :
+HOST = 127.0.0.1
+PORT = 3306
+DATABASE = kinmart
+USERNAME = root
+PASSWORD = vide
+
+Si votre XAMPP utilise le port 3307, modifier uniquement :
+'port' => '3307'
+
+Ou définir la variable d’environnement KINMART_DB_PORT.
+
+AUCUN chemin du type C:\Users\Nom\... n’est codé en dur dans l’application.
+
+5. OUVRIR KIN-MART
+------------------
+Boutique :
+http://localhost/KinMart/
+
+Connexion :
+http://localhost/KinMart/login
+
+Back-office :
+http://localhost/KinMart/admin
+
+6. COMPTES DE DÉMONSTRATION
+---------------------------
+Super administrateur
+Utilisateur : admin
+Mot de passe : KinMart@2026
+
+Gérant
+Utilisateur : manager
+Mot de passe : Manager@2026
+
+Caissier
+Utilisateur : cashier
+Mot de passe : Cashier@2026
+
+Magasinier
+Utilisateur : stock
+Mot de passe : Stock@2026
+
+Livreur
+Utilisateur : delivery
+Mot de passe : Delivery@2026
+
+Client
+Utilisateur : client
+Mot de passe : Client@2026
+
+IMPORTANT : modifier ces mots de passe avant une utilisation réelle.
+
+7. PREMIER TEST CONSEILLÉ
+-------------------------
+1) Se connecter comme admin.
+2) Vérifier Paramètres > taux USD/CDF et identité KIN-MART.
+3) Vérifier Produits.
+4) Se connecter comme caissier.
+5) Ouvrir une caisse avec un fonds initial.
+6) Scanner/saisir un code produit, par exemple KM-0001 si seed.sql est importé.
+7) Valider une vente.
+8) Vérifier que le stock diminue.
+9) Imprimer le ticket.
+10) Vérifier le Dashboard et Rapports.
+
+8. MODE HORS-LIGNE
+-------------------
+Bootstrap et les scripts nécessaires sont inclus dans le dossier du projet.
+Les fonctions principales ne nécessitent pas Internet.
+Les paiements Mobile Money sont enregistrés comme modes de paiement et références ; aucune API opérateur externe n’est requise.
+
+9. SAUVEGARDE
+-------------
+Connecté comme Super Admin :
+Administration > Sauvegarder BDD
+
+KIN-MART génère un fichier SQL téléchargeable.
+La restauration peut être faite dans phpMyAdmin via Importer.
+
+10. DÉPANNAGE
+-------------
+Erreur connexion MySQL :
+- vérifier que MySQL est démarré ;
+- vérifier le port 3306/3307 ;
+- vérifier le nom `kinmart` ;
+- vérifier root / mot de passe.
+
+Page 404 avec URL propre :
+- vérifier que Apache mod_rewrite est activé ;
+- vérifier AllowOverride All dans Apache ;
+- sinon tester directement http://localhost/KinMart/index.php?url=login
+
+Upload image impossible :
+- vérifier que public\uploads\products et public\uploads\documents sont accessibles en écriture.
+
+Port Apache différent :
+exemple : http://localhost:8080/KinMart/
+
+11. SÉCURITÉ APRÈS INSTALLATION
+-------------------------------
+- changer tous les mots de passe de démonstration ;
+- ne pas exposer phpMyAdmin sur Internet ;
+- conserver les sauvegardes sur un autre support ;
+- utiliser des comptes individuels par employé ;
+- vérifier régulièrement le journal d’audit.

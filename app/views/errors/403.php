@@ -1,0 +1,1 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><title>403 - KIN-MART</title><body style="font-family:Arial;padding:50px"><h1>Accès refusé</h1><p>Votre rôle ne vous autorise pas à accéder à cette ressource.</p><a href="<?= e(base_url('admin')) ?>">Retour</a></body></html>

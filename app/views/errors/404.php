@@ -1,0 +1,1 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><title>404 - KIN-MART</title><body style="font-family:Arial;padding:50px"><h1>404</h1><p>La page demandée est introuvable.</p><a href="<?= e(base_url()) ?>">Retour à KIN-MART</a></body></html>

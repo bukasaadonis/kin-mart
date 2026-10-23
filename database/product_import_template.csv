@@ -1,0 +1,2 @@
+internal_code;barcode;name;category;brand;unit;purchase_price;sale_price;quantity;min_stock;max_stock;location;expiration_date;status
+KM-TEST-001;6201234999996;Produit exemple;Alimentation;Generic;pc;1.00;1.50;20;5;50;Rayon A;;ACTIVE

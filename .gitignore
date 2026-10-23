@@ -1,0 +1,19 @@
+# Runtime data: logs, SQL backups and exports may contain real sales/customer data
+storage/logs/*
+storage/backups/*
+storage/exports/*
+!storage/**/.htaccess
+!storage/**/.gitkeep
+database/backup/*
+!database/backup/.gitkeep
+
+# User uploads (category illustrations in uploads/products are part of the app and kept)
+public/uploads/documents/*
+!public/uploads/documents/.gitkeep
+
+# Logs, OS and editor files
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="620" viewBox="0 0 800 620">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef7ff"/><stop offset="1" stop-color="#ffffff"/></linearGradient></defs>
+    <rect width="800" height="620" rx="52" fill="url(#g)"/>
+    <circle cx="650" cy="110" r="110" fill="#0ea5e9" opacity=".08"/>
+    <circle cx="120" cy="520" r="145" fill="#0ea5e9" opacity=".07"/>
+    <rect x="90" y="95" width="620" height="430" rx="42" fill="#fff" opacity=".5"/>
+    <text x="400" y="365" text-anchor="middle" font-size="190" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🥛</text>
+    <path d="M190 470h420" stroke="#0ea5e9" stroke-width="18" stroke-linecap="round" opacity=".18"/>
+    </svg>

@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Protéger certains fichiers sensibles
+<FilesMatch "^(\.env|composer\.(json|lock)|README\.md|INSTALLATION\.txt)$">
+    Require all denied
+</FilesMatch>
+
+# Ne pas réécrire les fichiers et dossiers physiques
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
